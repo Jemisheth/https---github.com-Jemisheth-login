@@ -74,10 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                 BlocBuilder<LoginBloc, LoginState>(
                   builder: (context, state) {
                     if (state is LoginLoadingState) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const NextScreen()));
+                      return Center(child: CircularProgressIndicator());
                     }
                     return GestureDetector(
                       onTap: () {
